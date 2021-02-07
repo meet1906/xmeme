@@ -1,7 +1,11 @@
 from django.db import models
+import uuid
+
+
 
 # Create your models here.
 class Memes(models.Model):
+	meme_id = models.UUIDField(default=uuid.uuid4)
 	name = models.CharField(max_length=1000)
 	caption = models.CharField(max_length=1000)
 	url = models.URLField(max_length=10000)

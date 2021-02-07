@@ -26,4 +26,14 @@ class MemesList(APIView):
 			return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+class MemesListById(APIView):
+
+	def get(self,request,meme_id):
+
+		meme=Memes.objects.get(meme_id=meme_id)
+		serializer=MemesSerializer(meme)
+		return Response(serializer.data)
+
+	
+
 

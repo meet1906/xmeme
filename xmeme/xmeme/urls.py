@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from buildout.api import MemesList
+from buildout.api import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/memes/',  MemesList.as_view(), name='memes_list')
+    path('api/memes/',  MemesList.as_view(), name='memes_list'),
+    path('api/memes/<str:meme_id>',MemesListById.as_view(),name='memes_id')
 ]
