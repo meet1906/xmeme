@@ -38,6 +38,8 @@ label {
 </body>
 
 <script>
+
+    //add event listener
     const memeform = document.querySelector(#meetxmeme);
     if(memeform)
     {
@@ -45,4 +47,90 @@ label {
             submitxmeme(e,this);
         });
     }
+
+    //function to submit the meme
+    async function submitxmeme(e,form)
+    {
+        e.preventDefault(); //prevents reloading the page
+
+        const submitbutton = document.getElementById("submit");
+        submitbutton.disabled=true;
+        
+        //building json body
+        const jsonformdata = buildjsonformdata(form);
+
+        //building json headers
+        const headers = buildheaders();
+
+        const response = await performposthttprequest('http://127.0.0.1:8000/api/memes/',headers,jsonformdata);
+        console.log(response);
+
+        if(response)
+        {
+            alert('SUCCESS');
+        }
+        else
+        {
+            alert('Error Occured');
+        }
+    }
+
+    function buildjsonformdata(form)
+    {
+        const jsonFormdata = { };
+        for(const pair of new formdata(form))
+        {
+            jsonFormdata[pair[0]]=pair[1];
+
+        }
+        return jsonFormdata;
+    }
+
+    function buildHeaders()
+    {
+    const headers = {
+        "Content-Type": "application/json",
+    };
+    return headers;
+    }
+
+    async function performposthttprequest(fetchLink, headers, body) {
+        if(!fetchLink || !headers || !body) {
+            throw new Error("One or more POST request parameters was not passed.");
+        }
+        try {
+            const rawResponse = await fetch(fetchLink, {
+                method: "POST",
+                headers: headers,
+                body: JSON.stringify(body)
+            });
+            const content = await rawResponse.json();
+            return content;
+        }
+        catch(err) {
+            console.error(`Error at fetch POST: ${err}`);
+            throw err;
+        }
+    }
+
+    async function performgethttprequest(fetchLink, headers, query=null) {
+        if(!fetchLink || !headers) {
+            throw new Error("One or more GET request parameters was not passed.");
+        }
+        try {
+            const rawResponse = await fetch(fetchLink, {
+                method: "GET",
+                headers: headers,
+                query: (query != null) ? query : ""
+            });
+            const content = await rawResponse.json();
+            return content;
+        }
+        catch(err) {
+            console.error(`Error at fetch GET: ${err}`);
+            throw err;
+        }
+    }
+
 </script>
+
