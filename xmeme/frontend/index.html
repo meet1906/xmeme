@@ -1,27 +1,9 @@
 <!DOCTYPE html>
 <head>
     <title>XMEME-MEET SHAH</title>
-    <style>
-        form {
-  /* Center the form on the page */
-  margin: 0 auto;
-  width: 500px;
-  /* Form outline */
-  padding: 1em;
-  border: 1px solid #CCC;
-  border-radius: 1em;
-}
-
-label {
-  /* Uniform size & alignment */
-  display: inline-block;
-  width: 90px;
-  text-align: right;
-}
-    </style>
 </head>
 <body>
-    <form action="" id="meetxmeme">
+    <form id="meetxmeme">
         <label for="Meme-Owner">Meme Owner</label>
         <input type="text" id="Meme-Owner" name="Meme-Owner">
 
@@ -40,97 +22,34 @@ label {
 <script>
 
     //add event listener
-    const memeform = document.querySelector(#meetxmeme);
-    if(memeform)
-    {
-        meetxmeme.addEventListener("submit",function(e) {
-            submitxmeme(e,this);
-        });
-    }
+    const memeform = document.querySelector("#meetxmeme");
 
-    //function to submit the meme
-    async function submitxmeme(e,form)
-    {
-        e.preventDefault(); //prevents reloading the page
-
-        const submitbutton = document.getElementById("submit");
-        submitbutton.disabled=true;
-        
-        //building json body
-        const jsonformdata = buildjsonformdata(form);
-
-        //building json headers
-        const headers = buildheaders();
-
-        const response = await performposthttprequest('http://127.0.0.1:8000/api/memes/',headers,jsonformdata);
-        console.log(response);
-
-        if(response)
-        {
-            alert('SUCCESS');
-        }
-        else
-        {
-            alert('Error Occured');
-        }
-    }
-
-    function buildjsonformdata(form)
-    {
-        const jsonFormdata = { };
-        for(const pair of new formdata(form))
-        {
-            jsonFormdata[pair[0]]=pair[1];
-
-        }
-        return jsonFormdata;
-    }
-
-    function buildHeaders()
-    {
-    const headers = {
+    console.log(memeform);
+    meetxmeme.addEventListener("submit",function(e) {
+        e.preventDefault();
+        const headers = {
         "Content-Type": "application/json",
-    };
-    return headers;
-    }
+        //"Access-Control-Allow-Origin": "*",
+        "Origin": "http://127.0.0.1:8000/",
 
-    async function performposthttprequest(fetchLink, headers, body) {
-        if(!fetchLink || !headers || !body) {
-            throw new Error("One or more POST request parameters was not passed.");
+        };
+        body = {
+        name: document.getElementById("Meme-Owner").value,
+        caption: document.getElementById("Caption").value,
+        url: document.getElementById("Meme-Image").value
         }
-        try {
-            const rawResponse = await fetch(fetchLink, {
+        const rawResponse = fetch("http://127.0.0.1:8000/api/memes/", {
                 method: "POST",
                 headers: headers,
+                redirect: 'follow', // manual, *follow, error
+    			referrerPolicy: 'no-referrer',
+                //Access-Control-Allow-Origin: '*',
+
+                mode: "cors",
                 body: JSON.stringify(body)
-            });
-            const content = await rawResponse.json();
-            return content;
-        }
-        catch(err) {
-            console.error(`Error at fetch POST: ${err}`);
-            throw err;
-        }
-    }
 
-    async function performgethttprequest(fetchLink, headers, query=null) {
-        if(!fetchLink || !headers) {
-            throw new Error("One or more GET request parameters was not passed.");
-        }
-        try {
-            const rawResponse = await fetch(fetchLink, {
-                method: "GET",
-                headers: headers,
-                query: (query != null) ? query : ""
             });
-            const content = await rawResponse.json();
-            return content;
-        }
-        catch(err) {
-            console.error(`Error at fetch GET: ${err}`);
-            throw err;
-        }
-    }
-
+    });
+    
 </script>
 
