@@ -1,21 +1,136 @@
 <!DOCTYPE html>
 <head>
     <title>XMEME-MEET SHAH</title>
+    <link rel="icon" type="image/x-icon" href="assets/dailytechbymeet.jpeg" />
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <style>
+    .nav {background-color: #ccedcc;width: 100%;/*position: fixed;z-index: 100;opacity: 0.9;border-radius: 10px;*/}
+	.nav li {display: inline;margin-right: 40px;}
+	.nav a {text-decoration: none;color: #34495e;}
+	.nav a:hover {border-bottom: 3px solid black;}
+	.header {background-color: #ccedcc;padding-top: 5px;padding-bottom: 3px;width: 100%;}
+
+	body {background-color: yellow;}
+
+	input{
+  width: 100%;
+  padding: 12px 12px 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* Style the submit button */
+button {
+  background-color: #ccedcc;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  padding: 12px 12px 12px 0;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+  padding: 12px 12px 12px 0;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+</style>
 </head>
 <body>
-    <form id="meetxmeme">
-        <label for="Meme-Owner">Meme Owner</label>
-        <input type="text" id="Meme-Owner" name="Meme-Owner">
+	<div class="header" id="header">
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="viewmemes.html">View-Memes</a></li>
+				<li><a href="#">Swagger UI</a></li>
+				<li><a href="#">Contact Me</a></li>
+			</ul>
+		</div>
+	</div>
+	<br>
+	<br>
+	
+	<div class="container">
+		<form id="meetxmeme">
+    		<div class="row">
+      		<div class="col-25">
+        		<label for="Meme-Owner"><h1>Enter Meme Owner's Name</h1></label>
+        	</div>
+      		<div class="col-75">
+        		<input type="text" id="Meme-Owner" name="Meme-Owner" required>
+        	</div>
+        	</div>
+        	<br>
 
-        <label for="Caption">Caption</label>
-        <input type="text" id="Caption" name="Caption">
+        	<div class="row">
+      		<div class="col-25">
+        		<label for="Caption"><h1>Enter Caption for your Meme</h1></label>
+        	</div>
+        	<div class="col-75">
+				<input type="text" id="Caption" name="Caption" required>
+			</div>
+			</div>	
+        	<br>
 
-        <label for="Meme-Image">Meme Image</label>
-        <input type="text" id="Meme-Image" name="Meme-Image">
-
+        	<div class="row">
+      		<div class="col-25">
+				<label for="Meme-Image"><h1>Enter url of your Meme Image</h1></label>
+			</div>
+			<div class="col-75">
+				<input type="text" id="Meme-Image" name="Meme-Image" required>
+			</div>
+        	</div>
+        	<br>
+        <br><br>
+        <div class="row">
         <button type="submit" id="submit">
             Submit
         </button>
+    	</div>
+        <br>
     </form>
 
 </body>

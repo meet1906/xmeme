@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <head>
     <title>XMEME-MEET SHAH</title>
+    <link rel="icon" type="image/x-icon" href="assets/dailytechbymeet.jpeg" />
+    <style>
+    #xyz {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+  align-items: center;
+	}
+    .nav {background-color: #ccedcc;width: 100%;/*position: fixed;z-index: 100;opacity: 0.9;border-radius: 10px;*/}
+	.nav li {display: inline;margin-right: 40px;}
+	.nav a {text-decoration: none;color: #34495e;}
+	.nav a:hover {border-bottom: 3px solid black;}
+	.header {background-color: #ccedcc;padding-top: 5px;padding-bottom: 3px;width: 100%;}
+</style>
 </head>
 <body>
+	<div class="header" id="header">
+		<div class="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="viewmemes.html">View-Memes</a></li>
+				<li><a href="#">Swagger UI</a></li>
+				<li><a href="#">Contact Me</a></li>
+			</ul>
+		</div>
+	</div>
+	<br>
 	<h1 align="center">Let's see all your memes</h1>
 	<hr>
 	<hr>
+	</div>
 	<div id="test">
     </div>
 	
@@ -27,7 +55,7 @@
 				mname = resu[i].name;
 				mcaption = resu[i].caption;
 				mimageurl = resu[i].url;
-				res+= "<h4>Name : </h4>"+mname+"<h4>caption : </h4>"+mcaption+"<h4>Meme Image : </h4> <img src ="+mimageurl+" alt='Image ain't possible></img>";
+				res+= "<div id='xyz'><h4>Name : "+mname+"</h4><img src ="+mimageurl+" alt='Image ain't possible height='100%' width='100%'></img><h4>caption : "+mcaption+"</h4><br></div>";
 				
 				
    			}
