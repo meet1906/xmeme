@@ -50,6 +50,13 @@
 
             });
     });
+
+    fetch('http://127.0.0.1:8000/api/memes/')
+    .then(response => response.json())
+    .then(json => console.log(json));
     
 </script>
+
+<script src="viewmemes.js"></script>
+
 
