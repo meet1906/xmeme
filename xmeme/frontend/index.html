@@ -94,7 +94,7 @@ button {
 	<br>
 	
 	<div class="container">
-		<form id="meetxmeme">
+		<form action="viewmemes.html"id="meetxmeme">
     		<div class="row">
       		<div class="col-25">
         		<label for="Meme-Owner"><h1>Enter Meme Owner's Name</h1></label>
@@ -142,7 +142,7 @@ button {
 
     //console.log(memeform);
     meetxmeme.addEventListener("submit",function(e) {
-        e.preventDefault();
+        //e.preventDefault();
         const headers = {
         "Content-Type": "application/json",
         //"Access-Control-Allow-Origin": "*",
