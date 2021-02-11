@@ -17,6 +17,7 @@
             Submit
         </button>
     </form>
+
 </body>
 
 <script>
@@ -24,7 +25,7 @@
     //add event listener
     const memeform = document.querySelector("#meetxmeme");
 
-    console.log(memeform);
+    //console.log(memeform);
     meetxmeme.addEventListener("submit",function(e) {
         e.preventDefault();
         const headers = {
@@ -51,12 +52,18 @@
             });
     });
 
-    fetch('http://127.0.0.1:8000/api/memes/')
-    .then(response => response.json())
-    .then(json => console.log(json));
+    //fetch('http://127.0.0.1:8000/api/memes/')
+    //.then(response => response.json())
+    //.then(json => console.log(json));
     
 </script>
 
+
+
 <script src="viewmemes.js"></script>
+
+
+
+
 
 
