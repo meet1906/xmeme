@@ -7,16 +7,16 @@ gets to post the memes you like and then gets to also view memes posted by other
 
 
 ### Important Links :link: : ###
-~~~
-XMEME WEB APPLICATION : - https://xmeme.shahmeet.me/
 
-XMEME WEB APPLICATION BACKEND : - https://xmeme.shahmeet.me/api/memes/
+***XMEME WEB APPLICATION : - https://xmeme.shahmeet.me/***
 
-XMEME WEB APPLICATION API DOCUMENTATION : - https://xmeme.shahmeet.me/openapi
+***XMEME WEB APPLICATION BACKEND : - https://xmeme.shahmeet.me/api/memes/***
 
-DEMO VIDEO : - 
+***XMEME WEB APPLICATION API DOCUMENTATION : - https://xmeme.shahmeet.me/openapi***
 
-~~~
+***DEMO VIDEO : - 
+
+
 
 
 ### TECH STACK USED :computer: : ###
