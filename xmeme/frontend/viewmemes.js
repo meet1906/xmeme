@@ -14,17 +14,37 @@ fetch('http://127.0.0.1:8000/api/memes/') //using promises
         //mcaption - stores meme caption
         //mimageurl - stores meme image url
         var mname,mcaption,mimageurl; 
+        console.log(resu.length-1);
+        //fetching the latest 100
+        if(resu.length-1<=100) //The number of memes posted is less than 100 that's max number of memes is only less than 100 in that scenario we post out all the memes we have
+        {
+          //starting from the last so that latest memes can be viewed first
+          for (i=resu.length-1;i>=0;i--) //posting all the memes as number of posted memes is less than 100
+          {
+            mname = resu[i].name; 
+            mcaption = resu[i].caption;
+            mimageurl = resu[i].url;
 
-        //starting from the last so that latest memes can be viewed first
-        for (i=resu.length-1;i>=0;i--) {
-        mname = resu[i].name; 
-        mcaption = resu[i].caption;
-        mimageurl = resu[i].url;
+            //storing the memes content in res
+            res+= "<div id='memebox'><h4>Name : "+mname+"</h4><h4>caption : "+mcaption+"</h4><img src ="+mimageurl+" alt='Image ain't possible height='100%' width='100%'></img><br></div>";
+        
+        
+          }
+        }
+        else //when number of memes posted is more than 100 then we display only the latest 100
+        {
+          //starting from the last so that latest memes can be viewed first
+          for (i=resu.length-1;i>=(resu.length-1)-100;i--) //posting the latest 100 memes posted as number of posted memes is greater than 100
+          {
+            mname = resu[i].name; 
+            mcaption = resu[i].caption;
+            mimageurl = resu[i].url;
 
         //storing the memes content in res
-        res+= "<div id='memebox'><h4>Name : "+mname+"</h4><img src ="+mimageurl+" alt='Image ain't possible height='100%' width='100%'></img><h4>caption : "+mcaption+"</h4><br></div>";
+          res+= "<div id='memebox'><h4>Name : "+mname+"</h4><img src ="+mimageurl+" alt='Image ain't possible height='100%' width='100%'></img><h4>caption : "+mcaption+"</h4><br></div>";
         
         
+          }
         }
         document.getElementById("test").innerHTML = res; //rendering res and displaying the content on web page.
   
