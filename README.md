@@ -20,6 +20,32 @@ gets to post the memes you like and then gets to also view memes posted by other
 
 ### TECH STACK USED :computer: : ###
 
+~~~
+
+Front End : * HTML
+            * CSS
+            * JAVASCRIPT
+            
+Back End  : * Django 
+            * Django Rest Framework
+            
+Database  : * SQLite
+
+
+Deployment : * VM instance running on Microsoft Azure
+             * Engine - nginX
+             
+ 
+
+```
+
+
+
+
+
+
+
+
 
 
 
