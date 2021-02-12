@@ -19,7 +19,7 @@ from django.conf.urls import url
 from buildout.api import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/memes/',  MemesList.as_view(), name='memes_list'),
-    path('api/memes/<str:meme_id>',MemesListById.as_view(),name='memes_id')
+    path('admin/', admin.site.urls), #admin/ is for admin portal 
+    path('api/memes/',  MemesList.as_view(), name='memes_list'), # api/memes - endpoint for getting and posting meme content
+    path('api/memes/<str:meme_id>',MemesListById.as_view(),name='memes_id') # api/memes/<id> - endpoint for getting meme content by unique id.
 ]

@@ -33,9 +33,9 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'corsheaders',
-    'buildout',
-    'rest_framework',
+    'corsheaders', #cors for allowing the front end to access the backend
+    'buildout', #my xmeme application which is named as buildout
+    'rest_framework', #django_rest_framework
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -1,9 +1,9 @@
 #for serializers
 
 from rest_framework import serializers
-from buildout.models import Memes
+from buildout.models import Memes #importing the Meme Model
 
-class MemesSerializer(serializers.ModelSerializer):
+class MemesSerializer(serializers.ModelSerializer): #creating the serializer
 
 	class Meta:
 		model = Memes
