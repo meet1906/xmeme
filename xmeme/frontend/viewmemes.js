@@ -1,5 +1,5 @@
 //using fetch to send a get request to get the meme content
-fetch('https://xmeme.shahmeet.me/api/memes/') //using promises
+fetch('http://localhost:8081/memes') //using promises
     .then(function(response) { 
         //console.log(response.json())
         return response.json();

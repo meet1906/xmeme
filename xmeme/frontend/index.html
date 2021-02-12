@@ -177,7 +177,7 @@
         }
 
         //using fetch to hit the endpoint and sending a POST Request.
-        const rawResponse = fetch("https://xmeme.shahmeet.me/api/memes/", {
+        const rawResponse = fetch("http://localhost:8081/memes", {
                 method: "POST",
                 headers: headers,
                 redirect: 'follow', // manual, *follow, error
