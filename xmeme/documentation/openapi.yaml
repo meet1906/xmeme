@@ -1,0 +1,117 @@
+openapi: 3.0.0
+info:
+  title: XMeme API
+  version: '0.0.1'
+  description: API doc for XMeme by Meet Shah
+servers:
+  - url: 'https://xmeme.shahmeet.me/api'
+paths:
+  /memes:
+    get:
+      tags:
+        - memes
+      summary: Get all the memes
+      description: Returns a list of all the memes
+      operationId: get-memes-all
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    meme_id:
+                      type: string
+                    name:
+                      type: string
+                    caption:
+                      type: string
+                      description: Caption of the meme
+                    url:
+                      type: string
+                      description: The url to an image
+    post:
+      summary: Create a meme
+      tags:
+        - memes
+      operationId: memes-post
+      description: Create a new meme
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  caption:
+                    type: string
+                    description: Caption of the meme
+                  url:
+                    type: string
+                    description: The url to an image
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  meme_id:
+                    type: string
+                  name:
+                    type: string
+                  caption:
+                    type: string
+                    description: Caption of the meme
+                  url:
+                    type: string
+                    description: The url to an image
+    parameters: []
+  /memes/{meme_id}:
+    get:
+      summary: Get a meme by its id
+      tags:
+        - memes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  meme_id:
+                    type: string
+                  name:
+                    type: string
+                  caption:
+                    type: string
+                    description: Caption of the meme
+                  url:
+                    type: string
+                    description: The url to an image
+      operationId: get-memes-id
+      description: Get a single meme by its id
+      parameters:
+        - schema:
+            type: number
+          in: path
+          name: meme_id
+          description: meme id
+          required: true
+    parameters: []
+tags:
+  - name: memes
