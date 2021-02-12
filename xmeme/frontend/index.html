@@ -111,7 +111,7 @@
 	
 	<!--Container div which has the form through which the user inputs the details -->
 	<div class="container">
-		<form action="viewmemes.html"id="meetxmeme">
+		<form id="meetxmeme">
     		<div class="row">
       			<div class="col-25">
         			<label for="Meme-Owner"><h1>Enter Meme Owner's Name</h1></label>
@@ -160,6 +160,7 @@
 
     //console.log(memeform);
     meetxmeme.addEventListener("submit",function(e) {
+    	e.preventDefault();
         const headers = {
         "Content-Type": "application/json", //it should take json data
         //"Access-Control-Allow-Origin": "*",
