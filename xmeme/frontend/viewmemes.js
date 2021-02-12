@@ -1,5 +1,5 @@
 //using fetch to send a get request to get the meme content
-fetch('https://xmeme.shameet.me/api/memes/') //using promises
+fetch('https://xmeme.shahmeet.me/api/memes/') //using promises
     .then(function(response) { 
         //console.log(response.json())
         return response.json();
