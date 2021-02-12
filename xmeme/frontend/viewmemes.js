@@ -26,7 +26,7 @@ fetch('https://xmeme.shahmeet.me/api/memes/') //using promises
             mimageurl = resu[i].url;
 
             //storing the memes content in res
-            res+= "<div id='memebox'><h4>Name : "+mname+"</h4><h4>caption : "+mcaption+"</h4><img src ="+mimageurl+" alt='Image ain't possible height='100%' width='100%'></img><br></div>";
+            res+= "<div id='memebox'><h4>Name : "+mname+"</h4><h4>caption : "+mcaption+"</h4><img src ="+mimageurl+" alt='The url is valid but does not contain an image' height='100%' width='100%'></img><br></div>";
         
         
           }
@@ -41,7 +41,7 @@ fetch('https://xmeme.shahmeet.me/api/memes/') //using promises
             mimageurl = resu[i].url;
 
         //storing the memes content in res
-          res+= "<div id='memebox'><h4>Name : "+mname+"</h4><img src ="+mimageurl+" alt='Image ain't possible height='100%' width='100%'></img><h4>caption : "+mcaption+"</h4><br></div>";
+          res+= "<div id='memebox'><h4>Name : "+mname+"</h4><img src ="+mimageurl+" alt='The url is valid but does not contain an image' height='100%' width='100%'></img><h4>caption : "+mcaption+"</h4><br></div>";
         
         
           }
