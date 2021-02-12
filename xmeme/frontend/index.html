@@ -162,7 +162,7 @@
         const headers = {
         "Content-Type": "application/json", //it should take json data
         //"Access-Control-Allow-Origin": "*",
-        "Origin": "http://127.0.0.1:8000/", //that's cors should allow localhost to access backend and that's why origin is mentioned
+        "Origin": "xmeme.shameet.me", //that's cors should allow localhost to access backend and that's why origin is mentioned
 
         };
 
@@ -175,7 +175,7 @@
         }
 
         //using fetch to hit the endpoint and sending a POST Request.
-        const rawResponse = fetch("http://127.0.0.1:8000/api/memes/", {
+        const rawResponse = fetch("https://xmeme.shameet.me/api/memes/", {
                 method: "POST",
                 headers: headers,
                 redirect: 'follow', // manual, *follow, error
