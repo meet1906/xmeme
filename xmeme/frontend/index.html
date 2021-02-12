@@ -187,7 +187,23 @@
                 mode: "cors",
                 body: JSON.stringify(body)
 
-            });
+            })
+        .then(function(response){
+        	//if successful then redirect to view the submission
+        	if(response.ok)
+        	{
+        		window.location="viewmemes.html";
+        	}
+        	else
+        	{
+        		//as unsuccessful so will give an alert
+        		alert("Bad Request. Please check your entered values");
+        	}
+        	
+
+        	
+
+        	});
     });
 
     
