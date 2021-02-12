@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <head>
     <title>XMEME-MEET SHAH</title>
+
+    <!-- Daily Tech BY Meet - My logo besides title -->
     <link rel="icon" type="image/x-icon" href="assets/dailytechbymeet.jpeg" />
+
     <style>
-    #xyz {
+
+    /*Styling for the individual memebox which would have the posted meme detail like name,caption and image.*/
+    #memebox {
   background-color: lightgrey;
   width: 300px;
   border: 15px solid green;
@@ -11,16 +16,23 @@
   margin: 20px;
   align-items: center;
 	}
+
+	/*Styling for nav bar */
     .nav {background-color: #ccedcc;width: 100%;/*position: fixed;z-index: 100;opacity: 0.9;border-radius: 10px;*/}
 	.nav li {display: inline;margin-right: 40px;}
 	.nav a {text-decoration: none;color: #34495e;}
 	.nav a:hover {border-bottom: 3px solid black;}
 	.header {background-color: #ccedcc;padding-top: 5px;padding-bottom: 3px;width: 100%;}
 
+	/*Styling for the whole body setting the background colour as yellow*/
 	body {background-color: yellow;}
-</style>
+	
+	</style>
 </head>
+
 <body>
+
+	<!-- The navbar -->
 	<div class="header" id="header">
 		<div class="nav">
 			<ul>
@@ -31,45 +43,19 @@
 			</ul>
 		</div>
 	</div>
+
+
 	<br>
 	<h1 align="center">Let's see all your memes</h1>
 	<hr>
 	<hr>
-	</div>
+
+	<!-- this div is where the output or the list and content of memes should be displayed. The logic is written in viewmemes.js -->
 	<div id="test">
     </div>
 	
-	<script>
-		
-		fetch('http://127.0.0.1:8000/api/memes/')
-		.then(function(response) {
-  			//console.log(response.json())
-  			return response.json();
-
-		})
-		.then(function(json) {
-  			let resu = json;
-  			console.log(resu);
-  			var res = "";
-  			var mname,mcaption,mimageurl;
-
-  			for (i=resu.length-1;i>=0;i--) {
-				mname = resu[i].name;
-				mcaption = resu[i].caption;
-				mimageurl = resu[i].url;
-				res+= "<div id='xyz'><h4>Name : "+mname+"</h4><img src ="+mimageurl+" alt='Image ain't possible height='100%' width='100%'></img><h4>caption : "+mcaption+"</h4><br></div>";
-				
-				
-   			}
-   			document.getElementById("test").innerHTML = res;
-  
-			
-		})
-		.catch(function(err) {
-  			console.log('Fetch problem: ');
-		});
-
-		
+	<!--calling viewmemes.js-->
+	<script src="viewmemes.js">
 	</script>
 </body>
 </html>

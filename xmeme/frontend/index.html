@@ -1,74 +1,82 @@
 <!DOCTYPE html>
 <head>
     <title>XMEME-MEET SHAH</title>
-    <link rel="icon" type="image/x-icon" href="assets/dailytechbymeet.jpeg" />
-    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+
+    <!-- Daily Tech BY Meet - My logo besides title -->
+    <link rel="icon" type="image/x-icon" href="assets/dailytechbymeet.jpeg" /> 
+
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'> 
+    
     <style>
-    .nav {background-color: #ccedcc;width: 100%;/*position: fixed;z-index: 100;opacity: 0.9;border-radius: 10px;*/}
+
+    /*Styling for nav bar */
+    .nav {background-color: #ccedcc;width: 100%;}
 	.nav li {display: inline;margin-right: 40px;}
 	.nav a {text-decoration: none;color: #34495e;}
 	.nav a:hover {border-bottom: 3px solid black;}
 	.header {background-color: #ccedcc;padding-top: 5px;padding-bottom: 3px;width: 100%;}
 
+	/*Styling for the whole body setting the background colour as yellow*/ 
 	body {background-color: yellow;}
 
+	/*Styling the Meme Form*/
 	input{
-  width: 100%;
-  padding: 12px 12px 12px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  resize: vertical;
-}
+  			width: 100%;
+  			padding: 12px 12px 12px 0;
+  			border: 1px solid #ccc;
+  			border-radius: 4px;
+  			box-sizing: border-box;
+  			resize: vertical;
+		}
 
-/* Style the label to display next to the inputs */
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-  margin-top: 6px;
-}
+	/* Style the label to display next to the inputs */
+	label{
+  			padding: 12px 12px 12px 0;
+  			display: inline-block;
+  			margin-top: 6px;
+		}
 
-/* Style the submit button */
-button {
-  background-color: #ccedcc;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
+	/* Style the submit button */
+	button{
+  			background-color: #ccedcc;
+  			color: black;
+  			padding: 12px 20px;
+  			border: none;
+  			border-radius: 4px;
+  			cursor: pointer;
+  			float: right;
+		}
 
-/* Style the container */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  border: 15px solid green;
-}
+	/* Style the container that is the whole big box which contains the form */
+	.container{
+  			border-radius: 5px;
+  			background-color: #f2f2f2;
+  			padding: 20px;
+  			border: 15px solid green;
+		}
 
-/* Floating column for labels: 25% width */
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-  padding: 12px 12px 12px 0;
-}
+	/* Floating column for labels: 25% width */
+	.col-25 {
+  			float: left;
+  			width: 25%;
+  			margin-top: 6px;
+  			padding: 12px 12px 12px 0;
+		}
 
-/* Floating column for inputs: 75% width */
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-  padding: 12px 12px 12px 0;
-}
+	/* Floating column for inputs: 75% width */
+	.col-75 {
+  			float: left;
+  			width: 75%;
+  			margin-top: 6px;
+  			padding: 12px 12px 12px 0;
+		}
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+	/* Clear floats after the columns */
+	.row:after {
+  				content: "";
+  				display: table;
+  				clear: both;
+		}
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -81,6 +89,8 @@ button {
 </style>
 </head>
 <body>
+
+	<!-- The navbar -->
 	<div class="header" id="header">
 		<div class="nav">
 			<ul>
@@ -92,72 +102,79 @@ button {
 		</div>
 	</div>
 	<br>
+
 	<h1 align="center">XMEME APPLICATION BY MEET</h1>
 	<hr>
 	<hr>
 	<br>
 	
+	<!--Container div which has the form through which the user inputs the details -->
 	<div class="container">
 		<form action="viewmemes.html"id="meetxmeme">
     		<div class="row">
-      		<div class="col-25">
-        		<label for="Meme-Owner"><h1>Enter Meme Owner's Name</h1></label>
-        	</div>
-      		<div class="col-75">
-        		<input type="text" id="Meme-Owner" name="Meme-Owner" required>
-        	</div>
+      			<div class="col-25">
+        			<label for="Meme-Owner"><h1>Enter Meme Owner's Name</h1></label>
+        		</div>
+      			<div class="col-75">
+        			<input type="text" id="Meme-Owner" name="Meme-Owner" required>
+        		</div>
         	</div>
         	<br>
 
         	<div class="row">
-      		<div class="col-25">
-        		<label for="Caption"><h1>Enter Caption for your Meme</h1></label>
-        	</div>
-        	<div class="col-75">
-				<input type="text" id="Caption" name="Caption" required>
-			</div>
+      			<div class="col-25">
+        			<label for="Caption"><h1>Enter Caption for your Meme</h1></label>
+        		</div>
+        		<div class="col-75">
+					<input type="text" id="Caption" name="Caption" required>
+				</div>
 			</div>	
         	<br>
 
         	<div class="row">
-      		<div class="col-25">
-				<label for="Meme-Image"><h1>Enter url of your Meme Image</h1></label>
-			</div>
-			<div class="col-75">
-				<input type="text" id="Meme-Image" name="Meme-Image" required>
-			</div>
+      			<div class="col-25">
+					<label for="Meme-Image"><h1>Enter url of your Meme Image</h1></label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="Meme-Image" name="Meme-Image" required>
+				</div>
         	</div>
         	<br>
-        <br><br>
-        <div class="row">
-        <button type="submit" id="submit">
-            Submit
-        </button>
-    	</div>
-        <br>
-    </form>
+        	<br><br>
 
+        	<div class="row">
+        		<button type="submit" id="submit">
+            		<h1>Submit</h1>
+        		</button>
+    		</div>
+        	<br>
+    	</form>
+    </div>
 </body>
 
 <script>
 
-    //add event listener
+    //add event listener for what should happen once the form is submitted as you see meetxmeme is the id mentioned in the form tag 
     const memeform = document.querySelector("#meetxmeme");
 
     //console.log(memeform);
     meetxmeme.addEventListener("submit",function(e) {
-        //e.preventDefault();
         const headers = {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", //it should take json data
         //"Access-Control-Allow-Origin": "*",
-        "Origin": "http://127.0.0.1:8000/",
+        "Origin": "http://127.0.0.1:8000/", //that's cors should allow localhost to access backend and that's why origin is mentioned
 
         };
+
+        //creating json body
         body = {
-        name: document.getElementById("Meme-Owner").value,
+        //getting the value entered to fields through document.getElementById 
+        name: document.getElementById("Meme-Owner").value, 
         caption: document.getElementById("Caption").value,
         url: document.getElementById("Meme-Image").value
         }
+
+        //using fetch to hit the endpoint and sending a POST Request.
         const rawResponse = fetch("http://127.0.0.1:8000/api/memes/", {
                 method: "POST",
                 headers: headers,
@@ -171,12 +188,10 @@ button {
             });
     });
 
-    fetch('http://127.0.0.1:8000/api/memes/')
-    .then(response => response.json())
-    .then(json => console.log(json));
+    
     
 </script>
-
+</html>
 
 
 
