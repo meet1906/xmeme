@@ -35,7 +35,7 @@ Database  : * SQLite
 
 
 Deployment : * VM instance running on Microsoft Azure
-             * Engine - nginX
+             * Web Server - nginX
  ~~~
              
  *This project is created as a part of my buildout project for stage 2 of crio winter of doing externship program 2020-2021. :sparkles:*
