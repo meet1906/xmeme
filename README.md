@@ -14,7 +14,7 @@ gets to post the memes you like and then gets to also view memes posted by other
 
 ***XMEME WEB APPLICATION API DOCUMENTATION : - https://xmeme.shahmeet.me/openapi***
 
-***DEMO VIDEO : -*** 
+***DEMO VIDEO : - https://youtu.be/EdLiA0eSQwo*** 
 
 - - - - 
 
