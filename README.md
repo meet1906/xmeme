@@ -38,7 +38,7 @@ Deployment : * VM instance running on Microsoft Azure
              * Web Server - nginX
  ~~~
              
- *This project is created as a part of my buildout project for stage 2 of crio winter of doing externship program 2020-2021. :sparkles:*
+ *This project is created as a part of my buildout project for stage 2 of crio winter of doing externship program 2020-2021 :sparkles:*
 
 
 
